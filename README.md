@@ -75,6 +75,9 @@ Future<String> filterToggle () async {
       headers: {"Content-Type": "application/json;charset=utf-8"},
       body: body
   );
+
+   return 'HDR status: $hdrState';
+}
  ```
 
 ## Next steps 
