@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
               child: Text('Camera State'),
             ),
             RaisedButton(
-              child: Text('Next Screen'),
+              child: Text('Next Screen (Adjust HDR Settings)'),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) => ScreenTwo(title: 'Toggle HDR',)

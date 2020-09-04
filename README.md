@@ -1,12 +1,32 @@
-# RICOH THETA Dar Tutorial for SC2
+# Toggle the HDR Setting on the RICOH THETA V/SC2/Z1
 
-This is the code for the video tutorial on how to get started building
-a simple app for the RICOH THETA SC2.
+This app uses the RICOH THETA API to toggle the HDR setting on the camera, and displays the current setting to the screen. 
 
-The video tutorial is freely available on the theta360.guide 
-[SC2 Developers site](https://theta360.guide/special/sc2/).
+## (Work in Progress)
+![screenshot of settings](images/hdrScreenShot.jpg)
 
-Note that there are three code examples.
-A Flutter code example for the SC2  shows how
-to check the state of the camera with a loop so that your program can
-get the image automatically after a picture is taken.
+## Getting Started
+
+Hitting the 'Toggle HDR Button' will toggle between HDR settings and display the current setting to the home screen
+![screenshot of settings](images/ToggleHdr.JPG)
+
+This allows you to easily tell which HDR setting you are currently in: 
+![screenshot of settings](images/hdrOn.JPG)
+![screenshot of settings](images/hdrOff.JPG)
+
+
+## Next steps 
+- Right now there is no way to tell if an image is "hdr" AFTER the picture is taken. Perhaps I could push metadata to the file to 
+"mark" HDR pictures. 
+- I want to display the current HDR setting when the app starts up. Currently, the text only updates when the HDR setting is toggled. 
+
+
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

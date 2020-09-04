@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ricoht_theta_sc2_flutter_test/displayImage.dart';
 import 'package:ricoht_theta_sc2_flutter_test/main.dart';
-import 'package:ricoht_theta_sc2_flutter_test/takePicture.dart';
-import 'package:ricoht_theta_sc2_flutter_test/state.dart';
+import 'package:ricoht_theta_sc2_flutter_test/displayImage.dart';
 import 'package:ricoht_theta_sc2_flutter_test/last_file_url.dart';
 import 'package:ricoht_theta_sc2_flutter_test/toggle_hdr.dart';
 
@@ -17,18 +17,15 @@ class ScreenTwo extends StatefulWidget {
 
 
 class _ScreenTwoState extends State<ScreenTwo> {
-  // var imageUrl = 'https://picsum.photos/400/200';
 
-  var imageUrl =
-      'http://192.168.1.1/files/thetasc26c21a247d9055838792badc5/100RICOH/R0010124.JPG';
+  var imageUrl = 'https://picsum.photos/200/300';
 
-  void _getImage() async {
-    var last_file = await lastFileUrl();
-
+  void getImage() async {
+    var changedUrl = await displayFile();
     setState(() {
-      print(last_file);
-      imageUrl = last_file;
+      imageUrl = changedUrl;
     });
+    print("change Image");
   }
 
   @override
@@ -44,10 +41,16 @@ class _ScreenTwoState extends State<ScreenTwo> {
             Text(
               'RICOH THETA SC2',
             ),
-//            Container(
-//                height: 200, child: Image.network(imageUrl)),
+            Container(
+                height: 200, child: Image.network(imageUrl)),
+//            Padding(
+//              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
+//              child: Image.network(imageUrl),
+//            ),
             RaisedButton(
-              onPressed: _getImage,
+              onPressed: () {
+                getImage();
+              },
               child: Text('Get SC2 Image'),
             ),
             RaisedButton(
