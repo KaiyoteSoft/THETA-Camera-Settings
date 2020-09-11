@@ -4,8 +4,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'pretty_print.dart';
-import 'get_setting.dart';
+import '../pretty_print.dart';
+import '../get_setting.dart';
+import '../info.dart';
 
 Future<String> filterToggle () async {
   var url ='http://192.168.1.1/osc/commands/execute';

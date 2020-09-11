@@ -3,7 +3,7 @@ import 'package:ricoht_theta_sc2_flutter_test/displayImage.dart';
 import 'package:ricoht_theta_sc2_flutter_test/main.dart';
 import 'package:ricoht_theta_sc2_flutter_test/displayImage.dart';
 import 'package:ricoht_theta_sc2_flutter_test/last_file_url.dart';
-import 'package:ricoht_theta_sc2_flutter_test/toggle_hdr.dart';
+import 'package:ricoht_theta_sc2_flutter_test/change_settings/toggle_hdr.dart';
 
 
 class ScreenTwo extends StatefulWidget {
@@ -58,7 +58,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
                 filterToggle().then((val) => setState(() {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) => HomePage(
-                        hdrStatus: val,
+                        outputText: val,
                     ),
                   ), );
                 }));

@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
+//import 'dart:html';
 import 'package:http/http.dart' as http;
 import 'pretty_print.dart';
+import 'info.dart';
 
 Future<String> getSetting({selectedCommand}) async {
   String command = selectedCommand;
@@ -29,30 +31,68 @@ Future<String> getSetting({selectedCommand}) async {
 }
 
 Future<String> displayAllSettings() async {
+  String cameraModel = await info();
+
   var url = 'http://192.168.1.1/osc/commands/execute';
+  List optionNames = [
+    '_autoBracket',
+    '_bitrate',
+    'captureInterval',
+    'captureMode',
+    'captureNumber',
+    'clientVersion',
+    '_colorTemperature',
+    'dateTimeZone',
+    'exposureCompensation',
+    'exposureDelay',
+    'exposureProgram',
+    'fileFormat',
+    '_filter',
+    '_gain',
+    'gpsInfo',
+    'iso',
+    'isoAutoHighLimit',
+    '_latestEnabledExposureDelayTime',
+    '_maxRecordableTime',
+    'offDelay',
+    'previewFormat',
+    'remainingPictures',
+    'remainingSpace',
+    'remainingVideoSeconds',
+    'shutterSpeed',
+    '_shutterVolume',
+    'sleepDelay',
+    'totalSpace',
+    'whiteBalance',
+  ];
+
+  if (cameraModel == 'RICOH THETA V') {
+    optionNames.addAll(['aperture',
+  '_authentication',
+    '_language',
+    '_microphone',
+      '_microphoneChannel',
+      '_networkType',
+      '_shootingMethod',
+      '_timeShift',
+      '_topBottomCorrection',
+      'videoStitching',
+      '_wlanFrequency',
+    ]);
+  }
+  else if (cameraModel == 'RICOH THETA SC2') {
+    optionNames.addAll(['_function',
+      '_wlanChannel',
+
+    ]);
+  }
+
+
 
   Map data = {
     'name': 'camera.getOptions',
     'parameters': {
-      'optionNames': [
-        '_autoBracket',
-        'captureInterval',
-        'captureMode',
-        'captureNumber',
-        'clientVersion',
-        '_colorTemperature',
-        'dateTimeZone',
-        'exposureCompensation',
-        'exposureDelay',
-        'exposureProgram',
-        'fileFormat',
-        '_function',
-        '_gain',
-        'gpsInfo',
-        'iso',
-        '_bitrate',
-        '_filter',
-      ]
+      'optionNames': optionNames
     }
   };
 
@@ -65,7 +105,7 @@ Future<String> displayAllSettings() async {
   String allSettings = jsonEncode(hdrType['results']['options']);
   String hdrState = outputPrettyPrint(response.body);
   allSettings = outputPrettyPrint(allSettings);
-  print(allSettings);
+  prettyPrint(allSettings);
 
   return allSettings;
 }
