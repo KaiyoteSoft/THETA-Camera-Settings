@@ -60,8 +60,8 @@ As a reminder, the relevant files can be found in the `lib` folder of this proje
 
 ## Resources
 A few resources to get you started if this is your first Flutter project
-[Video tutorials: Build a basic mobile app for the RICOH THETA SC2](https://youtu.be/Ayd8_FD2H58)
-[Resources: Documentation, tutorials, solutions, troubleshooting and more for the RICOH THETA SC2](https://theta360.guide/special/sc2/)
+- [Video tutorials: Build a basic mobile app for the RICOH THETA SC2](https://youtu.be/Ayd8_FD2H58)
+- [Resources: Documentation, tutorials, solutions, troubleshooting and more for the RICOH THETA SC2](https://theta360.guide/special/sc2/)
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
