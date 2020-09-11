@@ -19,32 +19,32 @@ SC2 and V | THETA V (only) | THETA SC2 (only) | Neither
 '_autoBracket' |  '_authentication',  |  _function'    | _bluetoothClassicEnable
 '_bitrate'   |  '_language',  |   _wlanChannel   |  _bluetoothPower
 'captureInterval'  |  '_microphone',  |      |  _compositeShootingTime
-    'captureMode'  |  '_microphoneChannel'  |   n/a   |  _HDMIreso
-    'captureNumber'  |  '_networkType'  |   n/a   |  _imageStitching
-    'clientVersion' |   '_shootingMethod'  |   n/a   |  _visibilityReduction
-    '_colorTemperature' |   '_timeShift'  |    n/a  | n/a
-    'dateTimeZone' |   '_topBottomCorrection'  |  n/a    | n/a
-    'exposureCompensation' |   'videoStitching'  |   n/a   | n/a
-    'exposureDelay' |   '_wlanFrequency'  |   n/a   | n/a
-    'exposureProgram' |  n/a  |   n/a   | n/a
-    'fileFormat' |  n/a  |   n/a   | n/a
-    '_filter' |  n/a  |   n/a   | n/a
-    '_gain' |  n/a  |   n/a   | n/a
-    'gpsInfo' |  n/a  |   n/a   | n/a
-    'iso' |  n/a  |   n/a   | n/a
-    'isoAutoHighLimit' |  n/a  |   n/a   | n/a
-    '_latestEnabledExposureDelayTime' |  n/a  |   n/a   | n/a
-    '_maxRecordableTime' |  n/a  |   n/a   | n/a
-    'offDelay' |  n/a  |   n/a   | n/a
-    'previewFormat' |  n/a  |   n/a   | n/a
-    'remainingPictures' |  n/a  |   n/a   | n/a
-    'remainingSpace' |  n/a  |   n/a   | n/a
-    'remainingVideoSeconds' |  n/a  |   n/a   | n/a
-    'shutterSpeed' |  n/a  |   n/a   | n/a
-    '_shutterVolume' |  n/a  |   n/a   | n/a
-    'sleepDelay' |  n/a  |   n/a   | n/a
-    'totalSpace' |  n/a  |   n/a   | n/a
-    'whiteBalance' |  n/a  |   n/a   | n/a
+'captureMode'  |  '_microphoneChannel'  |      |  _HDMIreso
+'captureNumber'  |  '_networkType'  |      |  _imageStitching
+'clientVersion' |   '_shootingMethod'  |      |  _visibilityReduction
+'_colorTemperature' |   '_timeShift'  |      |
+'dateTimeZone' |   '_topBottomCorrection'  |      |
+'exposureCompensation' |   'videoStitching'  |      |
+'exposureDelay' |   '_wlanFrequency'  |      |
+'exposureProgram' |    |      |
+'fileFormat' |    |      |
+'_filter' |    |      |
+'_gain' |    |      |
+gpsInfo' |    |      |
+'iso' |    |      |
+'isoAutoHighLimit' |    |      |
+'_latestEnabledExposureDelayTime' |    |      |
+'_maxRecordableTime' |    |      |
+'offDelay' |    |      |
+'previewFormat' |    |      |
+'remainingPictures' |    |      |
+'remainingSpace' |    |      |
+remainingVideoSeconds' |    |      |
+'shutterSpeed' |    |      |
+'_shutterVolume' |    |      |
+'sleepDelay' |    |      |
+'totalSpace' |    |      |
+whiteBalance' |  |   |
 
 
 ## The Code
