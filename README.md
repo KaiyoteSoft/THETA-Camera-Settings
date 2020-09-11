@@ -18,7 +18,7 @@ SC2 and V | THETA V (only) | THETA SC2 (only) | Neither
  --------- | -------------- | ---------------- | ----------
 '_autoBracket' |  '_authentication',  |  _function'    | _bluetoothClassicEnable
 '_bitrate'   |  '_language',  |   _wlanChannel   |  _bluetoothPower
-    'captureInterval'  |  '_microphone',  |  text    |  _compositeShootingTime
+'captureInterval'  |  '_microphone',  |      |  _compositeShootingTime
     'captureMode'  |  '_microphoneChannel'  |   n/a   |  _HDMIreso
     'captureNumber'  |  '_networkType'  |   n/a   |  _imageStitching
     'clientVersion' |   '_shootingMethod'  |   n/a   |  _visibilityReduction
