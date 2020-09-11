@@ -41,24 +41,24 @@ class _ScreenTwoState extends State<ScreenTwo> {
             Text(
               'RICOH THETA SC2',
             ),
-            Container(
-                height: 200, child: Image.network(imageUrl)),
+//            Container(
+//                height: 200, child: Image.network(imageUrl)),
 //            Padding(
 //              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
 //              child: Image.network(imageUrl),
 //            ),
-            RaisedButton(
-              onPressed: () {
-                getImage();
-              },
-              child: Text('Get SC2 Image'),
-            ),
+//            RaisedButton(
+//              onPressed: () {
+//                getImage();
+//              },
+//              child: Text('Get SC2 Image'),
+//            ),
             RaisedButton(
               onPressed: () {
                 filterToggle().then((val) => setState(() {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) => HomePage(
-                        hdrStatus: val
+                        hdrStatus: val,
                     ),
                   ), );
                 }));

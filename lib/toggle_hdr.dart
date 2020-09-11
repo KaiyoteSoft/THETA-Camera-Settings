@@ -5,34 +5,12 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'pretty_print.dart';
-
-Future<String> getHdr() async {
-  var url = 'http://192.168.1.1/osc/commands/execute';
-
-  Map data = {
-    'name': 'camera.getOptions',
-    'parameters': {
-      'optionNames': [
-        "_filter",
-      ]
-    }
-  };
-
-  //encode Map to JSON
-  var body = jsonEncode(data);
-
-  var response = await http.post(url,
-      headers: {"Content-Type": "application/json;charset=utf-8"}, body: body);
-  Map<String, dynamic> hdrType = jsonDecode(response.body);
-  String hdrState = hdrType['results']['options']['_filter'];
-
-  return hdrState;
-}
+import 'get_setting.dart';
 
 Future<String> filterToggle () async {
   var url ='http://192.168.1.1/osc/commands/execute';
 
-  String hdrState = await getHdr();
+  String hdrState = await getSetting(selectedCommand: '_filter');
 
 
 //  Depending on hdr state, toggle between the two modes
