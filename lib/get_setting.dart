@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'pretty_print.dart';
 import 'info.dart';
 
-Future<String> getSetting({selectedCommand}) async {
+Future<dynamic> getSetting({selectedCommand}) async {
   String command = selectedCommand;
 
   var url = 'http://192.168.1.1/osc/commands/execute';
@@ -25,7 +25,7 @@ Future<String> getSetting({selectedCommand}) async {
   var response = await http.post(url,
       headers: {"Content-Type": "application/json;charset=utf-8"}, body: body);
   Map<String, dynamic> hdrType = jsonDecode(response.body);
-  String hdrState = hdrType['results']['options']['_filter'];
+  var hdrState = hdrType['results']['options'][command];
 
   return hdrState;
 }
