@@ -58,11 +58,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-//  @override
-//  void initState() {
-//    displayText();
-//    super.initState();
-//  }
+  var imageUrl = 'https://picsum.photos/200/300';
+
+  void getImage() async {
+    var changedUrl = await displayFile();
+    setState(() {
+      imageUrl = changedUrl;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,10 +95,31 @@ class _HomePageState extends State<HomePage> {
                     ));
                   },
                 ),
+                Container(
+                  child: Image.network(imageUrl),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    RaisedButton(
+                        child: Text('Take Picture'),
+                        onPressed: () {
+                          takePicture();
+                        }
+                    ),
+                    RaisedButton(
+                      child: Text('Display last picture'),
+                      onPressed: () {
+                        setState(() {
+                          getImage();
+                        });
+                      },
+                    ),
+                  ],
+                ),
                 Text(widget.outputText, style: TextStyle(
                   fontSize: 15,
                 ),),
-
               ],
             ),
           ],

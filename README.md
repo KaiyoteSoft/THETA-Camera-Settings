@@ -5,6 +5,7 @@ It also allows the user to change certain camera settings.
 
 ## (Work in Progress)
 ![screenshot of settings](images/app_home.JPG)
+<img src="images/app_home.JPG" width="100">
 
 ## Overview
 On app startup the program displays all available camera settings to the screen. This is accomplished with the `camera.getOptions` command from the RICOH THETA API.

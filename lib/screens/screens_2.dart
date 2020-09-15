@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ricoht_theta_sc2_flutter_test/change_settings/change_captureInterval.dart';
 import 'package:ricoht_theta_sc2_flutter_test/change_settings/change_color_temperature.dart';
+import 'package:ricoht_theta_sc2_flutter_test/change_settings/change_exposure_value.dart';
+
 import 'package:ricoht_theta_sc2_flutter_test/components/reusableSlider.dart';
 import 'dart:math';
 import 'package:ricoht_theta_sc2_flutter_test/displayImage.dart';
@@ -93,6 +95,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
                         captureInterval = newValue;
                       });
                     },
+                    label: 'Capture Interval: ',
                 ),
                 RaisedButton(
                   child: Text('Change capture interval'),
@@ -119,6 +122,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
                       colorTemperature = newValue;
                     });
                   },
+                  label: 'Color Temperature: ',
                 ),
                 RaisedButton(
                   child: Text('Change color temperature'),
@@ -134,31 +138,40 @@ class _ScreenTwoState extends State<ScreenTwo> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                ReusableSlider(sliderValue: (exposureCompensation * 10).round().toDouble() / 10,
-                  minValue: -0.9,
-                  maxValue: 0.9,
-                  divisions: 13,
-                  onChanged: (double newValue) {
-                    setState(() {
-                      exposureCompensation = (newValue * 10).round().toDouble() / 10;
-                    });
-                  },
-                ),
-                RaisedButton(
-                  child: Text('Change exposure value'),
-                  onPressed: () {
-                    changeColorTemperature(selectedColorTemp: colorTemperature.toInt()).then((val) => setState(() {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => HomePage(
-                          outputText: val.toString(),
-                        ),
-                      ), );
-                    }));
-                  },
-                ),
-              ],
+            Container(
+//              padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  DropdownButton<double>(
+                    value: exposureCompensation,
+                    onChanged: (double newValue) {
+                      setState(() {
+                        exposureCompensation = newValue;
+                      });
+                    },
+                    items: <double>[-2.0, -1.7, -1.3, -1.0, -0.7, -0.3, 0.0, 0.3, 0.7, 1.0, 1.3, 1.7, 2.0]
+                        .map<DropdownMenuItem<double>>((double value) {
+                      return DropdownMenuItem<double>(
+                        value: value,
+                        child: Text(value.toString()),
+                      );
+                    }).toList(),
+                  ),
+                  RaisedButton(
+                    child: Text('Change exposure value'),
+                    onPressed: () {
+                      changeExposureValue(selectedExposureValue: exposureCompensation).then((val) => setState(() {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => HomePage(
+                            outputText: val.toString(),
+                          ),
+                        ), );
+                      }));
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),

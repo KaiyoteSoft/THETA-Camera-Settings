@@ -6,8 +6,9 @@ class ReusableSlider extends StatelessWidget{
   double minValue;
   double maxValue;
   int divisions;
+  String label;
 
-  ReusableSlider({@required this.sliderValue, @required this.minValue, @required this.maxValue, this.divisions, this.onChanged});
+  ReusableSlider({@required this.sliderValue, @required this.minValue, @required this.maxValue, this.divisions, this.onChanged, this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class ReusableSlider extends StatelessWidget{
       min: minValue,
       max: maxValue,
       divisions: this.divisions,
-      label: 'Capture interval: ' + sliderValue.toString(),
+      label: label + sliderValue.toString(),
       onChanged: onChanged,
     );
   }

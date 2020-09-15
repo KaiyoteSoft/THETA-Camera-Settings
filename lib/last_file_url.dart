@@ -2,17 +2,28 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:io';
 
-Future<String> lastFileUrl() async {
-  var url = 'http://192.168.1.1/osc/state';
+Future<String> displayFile() async {
+//  var url = 'http://192.168.1.1/osc/state';
+  var url = 'http://192.168.1.1/osc/commands/execute';
 
-  var response = await http
-      .post(url, headers: {'Content-Type': 'application/json; charset=utf-8'});
+  Map executeCommand = {'name': 'camera.listFiles',
+    'parameters': {
+      'fileType': 'image',
+      'entryCount': 2,
+      'maxThumbSize': 0
+    }
+  };
 
-  Map<String, dynamic> thetaState = jsonDecode(response.body);
+  var commandJson = jsonEncode(executeCommand);
 
-  String imageFileUrl = thetaState['state']['_latestFileUrl'];
-  print(imageFileUrl);
-  var imageFileName = imageFileUrl.split("/")[6];
-  print(imageFileName);
-  return imageFileUrl;
+  var response = await http.post(url,
+      headers: {'Content-Type': 'application/json; charset=utf-8'}, body: commandJson);
+
+  Map<String, dynamic> listFilesOutput = jsonDecode(response.body);
+
+  var latestFileUrl = listFilesOutput['results']['entries'][0]['fileUrl'];
+
+
+  return latestFileUrl;
+//   print(latestFileUrl);
 }
