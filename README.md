@@ -4,8 +4,7 @@ This app uses the RICOH THETA API to display all available camera options to the
 It also allows the user to change certain camera settings.
 
 ## (Work in Progress)
-<img src="images/app_home2.JPG" width="300">
-<img src="images/adjust_settings.JPG" width="300">
+<img src="images/app_home2.JPG" width="300">   <img src="images/adjust_settings.JPG" width="300">
 
 
 ## Overview
