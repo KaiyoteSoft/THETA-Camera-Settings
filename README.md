@@ -18,16 +18,16 @@ See the table below for an overview of which commands are supported by camera mo
 SC2 and V | THETA V (only) | THETA SC2 (only) | Neither
  --------- | -------------- | ---------------- | ----------
 '_autoBracket' |  '_authentication',  |  _function'    | _bluetoothClassicEnable
-'_bitrate'   |  '_language',  |   _wlanChannel   |  _bluetoothPower
+'_bitrate'   |  '_language',  |   _wlanChannel   |  _compositeShootingOutputInterval
 'captureInterval'  |  '_microphone',  |      |  _compositeShootingTime
 'captureMode'  |  '_microphoneChannel'  |      |  _HDMIreso
-'captureNumber'  |  '_networkType'  |      |  _imageStitching
-'clientVersion' |   '_shootingMethod'  |      |  _visibilityReduction
+'captureNumber'  |  '_networkType'  |      |  _visibilityReduction
+'clientVersion' |   '_shootingMethod'  |      |
 '_colorTemperature' |   '_timeShift'  |      |
 'dateTimeZone' |   '_topBottomCorrection'  |      |
 'exposureCompensation' |   'videoStitching'  |      |
 'exposureDelay' |   '_wlanFrequency'  |      |
-'exposureProgram' |    |      |
+'exposureProgram' |  _imageStitching  |      |
 'fileFormat' |    |      |
 '_filter' |    |      |
 '_gain' |    |      |
@@ -46,7 +46,7 @@ remainingVideoSeconds' |    |      |
 'sleepDelay' |    |      |
 'totalSpace' |    |      |
 whiteBalance' |  |   |
-
+_bluetoothPower |   |   |
 
 ## The Code
 I used the `info` command to retrieve the model of the camera. I then appended appended THETA V or THETA SC2 commands to the list of camera commands **based on the model number.** This keeps the app from breaking across multiple cameras.

@@ -14,6 +14,7 @@ Future<String> changeColorTemperature ({selectedColorTemp}) async {
     'name': 'camera.setOptions',
     'parameters': {
       'options': {
+        "whiteBalance": "_colorTemperature",
         "_colorTemperature": colorTemp,
       }
     }

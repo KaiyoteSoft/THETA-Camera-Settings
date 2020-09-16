@@ -37,6 +37,7 @@ Future<String> displayAllSettings() async {
   List optionNames = [
     '_autoBracket',
     '_bitrate',
+    '_bluetoothPower',
     'captureInterval',
     'captureMode',
     'captureNumber',
@@ -78,6 +79,7 @@ Future<String> displayAllSettings() async {
       '_topBottomCorrection',
       'videoStitching',
       '_wlanFrequency',
+      '_imageStitching',
     ]);
   }
   else if (cameraModel == 'RICOH THETA SC2') {
