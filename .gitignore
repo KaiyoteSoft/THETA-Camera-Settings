@@ -1,3 +1,10 @@
+# do not share platform builds to avoid conflicts 
+android/
+ios/
+web/
+linux/
+test/
+
 # Miscellaneous
 *.class
 *.log
